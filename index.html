@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaidatech Glassmorphic Music Player</title>
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Icons via Lucide CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="glow-bg-1"></div>
+  <div class="glow-bg-2"></div>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar glass-panel">
+      <div class="logo-container">
+        <i data-lucide="disc" class="logo-icon animate-spin-slow"></i>
+        <span class="logo-text">Jaidatech</span>
+      </div>
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active"><i data-lucide="music"></i><span>Player</span></a>
+        <a href="#" class="nav-item"><i data-lucide="list-music"></i><span>Playlists</span></a>
+        <a href="#" class="nav-item"><i data-lucide="heart"></i><span>Favorites</span></a>
+        <a href="#" class="nav-item"><i data-lucide="settings"></i><span>Settings</span></a>
+      </nav>
+      <div class="user-profile">
+        <i data-lucide="user" class="profile-avatar"></i>
+        <div class="profile-info">
+          <span class="profile-name">Jaidatech Guest</span>
+          <span class="profile-role">Premium Member</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Player Dashboard -->
+    <main class="main-content">
+      <!-- Top header bar -->
+      <header class="top-bar">
+        <div class="search-box glass-panel">
+          <i data-lucide="search"></i>
+          <input type="text" placeholder="Search songs, artists, playlists...">
+        </div>
+        <div class="system-time">
+          <i data-lucide="calendar"></i>
+          <span id="date-display">July 1, 2026</span>
+        </div>
+      </header>
+
+      <!-- Glassmorphic Player Board -->
+      <div class="dashboard-grid">
+        <!-- Main Card Player -->
+        <section class="player-card-section glass-panel">
+          <div class="album-art-container">
+            <div class="album-art-wrapper">
+              <img id="track-art" src="https://picsum.photos/400/400?random=1" alt="Album Art">
+              <div class="vinyl-record animate-spin-slow" id="vinyl-disc"></div>
+            </div>
+          </div>
+          
+          <div class="track-details">
+            <h1 id="track-title" class="track-title">Dynamic Soundwaves</h1>
+            <p id="track-artist" class="track-artist">Jaidatech Sound Labs</p>
+          </div>
+
+          <!-- Timeline controls -->
+          <div class="timeline-container">
+            <span id="current-time" class="time-label">0:00</span>
+            <div class="progress-bar-wrapper" id="progress-bar-wrapper">
+              <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <span id="total-duration" class="time-label">0:00</span>
+          </div>
+
+          <!-- Playback controls -->
+          <div class="playback-controls">
+            <button id="btn-shuffle" class="control-btn" title="Shuffle"><i data-lucide="shuffle"></i></button>
+            <button id="btn-prev" class="control-btn secondary-btn" title="Previous"><i data-lucide="skip-back"></i></button>
+            <button id="btn-play" class="control-btn play-btn" title="Play/Pause"><i data-lucide="play" id="play-icon"></i></button>
+            <button id="btn-next" class="control-btn secondary-btn" title="Next"><i data-lucide="skip-forward"></i></button>
+            <button id="btn-repeat" class="control-btn" title="Repeat"><i data-lucide="repeat"></i></button>
+          </div>
+
+          <!-- Auxiliary controls -->
+          <div class="volume-container">
+            <i data-lucide="volume-2" id="volume-icon"></i>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.7">
+          </div>
+        </section>
+
+        <!-- Right Playlist Queue -->
+        <section class="queue-section glass-panel">
+          <h2 class="section-title">Tracks Queue</h2>
+          <div class="track-list" id="track-list">
+            <!-- Dynamically populated -->
+          </div>
+          <footer class="company-footer">
+            <p>Jaidatech Glassmorphic Player &copy; 2026</p>
+            <p class="subtext">Custom Premium Web Interface</p>
+          </footer>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
